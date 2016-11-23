@@ -15,7 +15,7 @@
 
       <div class="content">
           <div class="title m-b-md">
-              Laravel
+              <h1>Laravel</h1>
           </div>
 
           <div class="links">
