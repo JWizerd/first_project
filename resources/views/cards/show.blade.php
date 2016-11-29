@@ -17,6 +17,12 @@
           <div class="title m-b-md">
               <h1>Cards</h1>
               {{ $card->title }}
+              <h3>Hints</h3>
+              <ul>
+                @foreach ($card->hints as $hint)
+                  <li>{{$hint->body}}</li>
+                @endforeach
+              </ul>
           </div>
       </div>
   </div>
