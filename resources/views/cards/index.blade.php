@@ -18,7 +18,7 @@
               <h1>Cards</h1>
               @foreach ($cards as $card)
                 <div>
-                  {{ $card->title }}
+                  <a href="/cards/{{$card->id}}">{{ $card->title }}</a>
                 </div>
               @endforeach
           </div>
