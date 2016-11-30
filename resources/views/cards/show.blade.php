@@ -13,14 +13,14 @@
           </div>
       @endif
 
-      <div class="content">
+      <div class="content row">
           <div class="title m-b-md">
               <h1>Cards</h1>
-              {{ $card->title }}
+              <h4 class="text-success">{{ $card->title }}</h4>
               <h3>Hints</h3>
-              <ul>
+              <ul class="list-group col-md-6">
                 @foreach ($card->hints as $hint)
-                  <li>{{$hint->body}}</li>
+                  <li class="list-group-item">{{$hint->body}}</li>
                 @endforeach
               </ul>
           </div>
