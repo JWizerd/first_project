@@ -18,8 +18,13 @@ class HintsController extends Controller
 
 
     // Short Hand Method for Creating new Hints
-    $hint = new Hint(['body' => $request->body]);
-    $card->hints()->save($hint);
+    // $hint = new Hint(['body' => $request->body]);
+    // $card->hints()->save($hint);
+    // return back();
+
+    // OR use eloquents built relational methods for creating hints relating to a specific card. the hints() method instantiates a new hint use HasMany eloquent method. 
+
+    $card->hints()->create(['body' => $request->body]);
     return back();
   }
 }
