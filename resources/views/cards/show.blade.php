@@ -25,5 +25,22 @@
               </ul>
           </div>
       </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="title m-b-md">
+              <hr>
+              <h2>Add New Hint</h2>
+          </div>
+          <form action="/cards/{{$card->id}}/hints" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="form-group">
+              <textarea name="body" rows="8" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit" name="add_card">Add Hint</button>
+            </div>
+          </form>
+        </div>
+      </div>
   </div>
 @stop

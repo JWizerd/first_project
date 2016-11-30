@@ -16,12 +16,14 @@
       <div class="content">
           <div class="title m-b-md">
               <h1>Cards</h1>
-              @foreach ($cards as $card)
-                <ul class="list-group col-md-6">
-                  <li class="list-group-item"><a href="/cards/{{$card->id}}"><h4>{{ $card->title }}</h4></a> </li>
-                </ul>
-              @endforeach
           </div>
-      </div>
+          <div class="row">
+            @foreach ($cards as $card)
+              <ul class="list-group col-md-6">
+                <li class="list-group-item"><a href="/cards/{{$card->id}}"><h4>{{ $card->title }}</h4></a> </li>
+              </ul>
+            @endforeach
+          </div>
+        </div>
   </div>
 @stop
