@@ -20,7 +20,7 @@
               <h3>Hints</h3>
               <ul class="list-group col-md-6">
                 @foreach ($card->hints as $hint)
-                  <li class="list-group-item">{{$hint->body}}</li>
+                  <li class="list-group-item">{{$hint->body}} <a class="text-right" href="/hints/{{$hint->id}}/edit">edit</a></li>
                 @endforeach
               </ul>
           </div>

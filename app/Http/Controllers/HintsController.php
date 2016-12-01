@@ -6,6 +6,7 @@ use App\Hint;
 use App\Card;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class HintsController extends Controller
 {
@@ -28,7 +29,21 @@ class HintsController extends Controller
 
     // Even Further, use the all() method on the request to get all data from the post request. Make sure that you have $fillable set for data input to eliminate any malicious attempts.
 
-    $card->hints()->create($request->all());
-    return back();
+      // $card->hints()->create($request->all());
+      // return back();
+
+    // lastly, and bestly, you could create a method in your model that abstracts the logic since your dealing primarily with data here the model should control this logic anyways. Method created in Card.php is addHint();
+
+    $card->addHint( new Hint($request->all()) );
+    return back(); // back redirects you back to the request page
+  }
+
+  public function edit(Hint $hint) {
+    return view('hints.edit', compact('hint'));
+  }
+
+  public function update(Request $request, Hint $hint) {
+    $hint->update($request->all());
+    return redirect('cards/' . $hint->card_id);
   }
 }

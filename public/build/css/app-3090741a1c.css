@@ -7692,4 +7692,9 @@ body {
   background-color: #f1f1f1;
 }
 
+.text-right {
+  display: inline-block;
+  float: right;
+}
+
 /*# sourceMappingURL=app.css.map */

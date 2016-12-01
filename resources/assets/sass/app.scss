@@ -13,3 +13,8 @@ $cloudy: #f1f1f1;
 body {
   background-color: $cloudy;
 }
+
+.text-right {
+  display: inline-block;
+  float: right;
+}
