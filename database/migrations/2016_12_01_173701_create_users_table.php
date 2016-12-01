@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHintsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateHintsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hints', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('username')->unique();
+            $table->string('email')->unique();
+            $table->string('password')->unique();
             $table->timestamps();
-            $table->text('body');
-            $table->integer('card_id')->unsigned()->index();
-            $table->integer('user_id')->unsigned()->index();
         });
     }
 
@@ -29,6 +29,6 @@ class CreateHintsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hints');
+        Schema::dropIfExists('users');
     }
 }

@@ -14,6 +14,7 @@ class CardsController extends Controller
   }
 
   public function show(Card $card) {
+    $card->load('hints.user');
     return view('cards.show', compact('card'));
   }
 }

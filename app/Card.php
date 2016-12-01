@@ -12,6 +12,10 @@ class Card extends Model
     return $this->hasMany(Hint::class);
   }
 
+  public function user() {
+    return $this->belongTo(User::class);
+  }
+
   public function addHint(Hint $hint)
   {
     return $this->hints()->save($hint);
