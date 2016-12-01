@@ -34,9 +34,9 @@ class HintsController extends Controller
 
     // lastly, and bestly, you could create a method in your model that abstracts the logic since your dealing primarily with data here the model should control this logic anyways. Method created in Card.php is addHint();
     $this->validate($request, [
-      "body" => "required"
+      "body" => "required|min:10"
     ]);
-    
+
     $hint = new Hint($request->all());
     $hint->user_id = 1;
     $card->addHint($hint);

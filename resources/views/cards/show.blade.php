@@ -38,7 +38,7 @@
           <form action="/cards/{{$card->id}}/hints" method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
-              <textarea name="body" rows="8" class="form-control"></textarea>
+              <textarea name="body" rows="8" class="form-control">{{ old('body') }}</textarea>
             </div>
             <div class="form-group">
               <button class="btn btn-primary" type="submit" name="add_card">Add Hint</button>
