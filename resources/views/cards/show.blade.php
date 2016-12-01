@@ -44,6 +44,13 @@
               <button class="btn btn-primary" type="submit" name="add_card">Add Hint</button>
             </div>
           </form>
+          @if (count($errors))
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li class="text-danger">{{$error}}</li>
+              @endforeach
+            </ul>
+          @endif
         </div>
       </div>
   </div>

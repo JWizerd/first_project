@@ -14,6 +14,7 @@ class CardsController extends Controller
   }
 
   public function show(Card $card) {
+    // load() stands for Eager Loading which is very important for getting data without invoking many database queries. N + 1 issue is solved by using Laravel's built in load function.
     $card->load('hints.user');
     return view('cards.show', compact('card'));
   }

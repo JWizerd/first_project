@@ -33,8 +33,13 @@ class HintsController extends Controller
       // return back();
 
     // lastly, and bestly, you could create a method in your model that abstracts the logic since your dealing primarily with data here the model should control this logic anyways. Method created in Card.php is addHint();
-
-    $card->addHint( new Hint($request->all()) );
+    $this->validate($request, [
+      "body" => "required"
+    ]);
+    
+    $hint = new Hint($request->all());
+    $hint->user_id = 1;
+    $card->addHint($hint);
     return back(); // back redirects you back to the request page
   }
 
